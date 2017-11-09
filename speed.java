@@ -12,6 +12,9 @@ Frances Anastasia
 import java.io.*;
 import java.util.*;
 
+import java.awt.*;
+import javax.swing.*;
+
 public class Speed {
 
 
@@ -23,7 +26,43 @@ public class Speed {
   public static double newTimeToDest;
   public static double newMilesPerMin;
 
+  private JFrame frame;
+  private JPanel panel; 
+  private JButton button; 
+  private JLabel label;
+
+  public Speed() {
+    gui();
+
+  }
+
+  public void gui() {
+
+    frame = new JFrame("SpeedSaver");
+
+    frame.setVisible(true);
+    frame.setSize(600,400);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    panel = new JPanel(new GridBagLayout());
+
+    GridBagConstraints c = new GridBagConstraints();
+
+    panel.setBackground(Color.GREEN);
+
+    button = new JButton("No Stops?");
+    label = new JLabel("This is a test label");
+
+    panel.add(button);
+    panel.add(label);
+
+    frame.add(panel);
+
+  }
+
   public static void main(String [] args) {
+
+    new Speed();
  
     Scanner input = new Scanner(System.in);
 
